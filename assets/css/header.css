@@ -1,0 +1,49 @@
+.textover img {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.textover {
+  position: relative;
+  margin: 0;
+}
+
+.textover figcaption {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: ntwagner;
+  font-size: 40px;
+}
+
+
+@media only screen and (min-width:720px) {
+  .back-display {
+    display: block;
+  }
+
+  .back-mobile {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width:720px) {
+  .textover figcaption {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .back-display {
+    display: none !important;
+  }
+
+  .back-mobile {
+    display: block;
+    height: 150px !important;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

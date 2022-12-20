@@ -1,0 +1,297 @@
+.title-bio {
+  font-family: ntwagner;
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+
+.bio-section {
+  width: 100%;
+}
+
+.bio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+.img-about {
+  width: 500px;
+  height: auto;
+  align-items: flex-start;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+  padding-left: 60px;
+}
+
+.bio-paragraph {
+  background-color: #ffce35;
+  width: 800px;
+  align-items: flex-end;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  padding: 40px;
+  margin-top: 200px;
+  margin-right: 60px;
+  text-align: left;
+}
+
+
+
+
+
+.skills-section {
+  width: 100%;
+  display: flex;
+  padding: 50px 200px 100px 200px;
+}
+
+.skills-title {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-family: ntwagner;
+  font-size: 40px;
+  padding: 20px 60px 0 60px;
+  background-color: #ffce35;
+}
+
+.skills-paragraph {
+  align-items: center;
+  text-align: left;
+  padding-left: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+
+
+
+.form-section {
+  background-color: #dfbacd;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  width: 45%;
+}
+
+.social-about {
+  height: 50px;
+  line-height: 50px;
+  width: 200px;
+  text-align: left;
+  margin: 2em 0;
+}
+
+.instagram-icon,
+.linkedin-icon,
+.behance-icon,
+.github-icon {
+  width: 50px;
+  height: auto;
+}
+
+.form-part {
+  width: 45%;
+}
+
+label,
+input,
+textarea {
+  display: flex;
+  border-radius: 10px;
+  border: none;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.submit-btn {
+  background-color: #ff66a3;
+  border: none;
+  border-radius: 20px;
+  color: #194d5b;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 50px;
+  margin-top: 30px;
+  transition-duration: 0.3s;
+}
+
+.submit-btn:hover,
+.submit-btn:link {
+  background-color: #ff7514;
+  color: white;
+}
+
+
+@media only screen and (min-width:720px) {
+  .navbar-mobile {
+    display: none;
+  }
+
+  .back-display {
+    display: block;
+  }
+
+  .back-mobile {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width:720px) {
+
+  .navbar-desktop {
+    display: none;
+  }
+
+  .navbar-mobile {
+    display: flex;
+    background-color: #f2f2f2;
+    position: fixed;
+    width: 100%;
+    color: #194d5b;
+    height: 55px;
+    z-index: 1;
+  }
+
+  .wave {
+    display: none;
+  }
+
+  .title-bio {
+    margin-top: 0 !important;
+    padding-bottom: 30px;
+  }
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  .navbar-toggler {
+    color: #f2f2f2 !important;
+    border-color: unset !important;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28 25, 77, 91, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+
+  .navbar-collapse {
+    background-color: #f2f2f2;
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .title-nav {
+    font-family: ntwagner;
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  .social {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textover figcaption {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .back-display {
+    display: none !important;
+  }
+
+  .back-mobile {
+    display: block;
+    height: 150px !important;
+  }
+
+  .title-bio {
+    margin-top: 30px;
+  }
+
+  .bio-container {
+    display: block;
+    margin-bottom: 50px;
+    width: 100%;
+  }
+
+  .bio-paragraph {
+    margin-top: 50px;
+    width: inherit;
+  }
+
+  .img-about {
+    width: 350px;
+    padding-left: 40px;
+  }
+
+  .skills-section {
+    padding: 0;
+    display: inline-block;
+  }
+
+  .skills-title {
+    justify-content: center;
+    padding-bottom: 20px;
+    background-color: unset;
+  }
+
+  .skills-paragraph {
+    padding-bottom: 80px;
+  }
+
+  .icon-section {
+    display: flow-root;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-left: 40px;
+  }
+
+  .social-about {
+    margin: 1em 0;
+  }
+
+  .form-container {
+    display: flow-root;
+  }
+
+  .form-part {
+    padding-left: 50px;
+    padding-top: 30px;
+  }
+
+  .form-section {
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
+}

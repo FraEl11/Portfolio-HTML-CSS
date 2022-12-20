@@ -1,0 +1,70 @@
+.intro-section {
+  background-color: #ffce35;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-container {
+  text-align: center;
+  padding-top: 40px;
+  width: 20%;
+}
+
+.intro-content {
+  width: 100%;
+  text-align: center;
+}
+
+.intro-title {
+  font-family: ntwagner;
+  font-size: 40px;
+  padding-bottom: 10px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.intro-paragraph {
+  text-align: left;
+  width: 100%;
+}
+
+.wave {
+  --size: 75px;
+  --p: 50px;
+  --R: 90.13px
+    /*sqrt(var(--size)*var(--size) + var(--p)*var(--p))*/
+  ;
+
+  height: 200px;
+
+  -webkit-mask:
+    radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))), #ffce35 99%, #0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, #ffce35 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
+  background: #ffce35;
+  border: none;
+}
+
+
+@media only screen and (max-width:720px) {
+  .intro-container {
+    text-align: center;
+    padding-top: 40px;
+    width: 80%;
+  }
+
+  .wave {
+    --size: 0;
+    --p: 0;
+    --R: 0
+      /*sqrt(var(--size)*var(--size) + var(--p)*var(--p))*/
+    ;
+
+    height: 100px;
+
+    -webkit-mask:
+      radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))), #ffce35 99%, #0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
+      radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, #ffce35 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
+    background: #ffce35;
+    border: none;
+  }
+}
