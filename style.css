@@ -48,7 +48,7 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:link {
+.icon-social:hover,
+.icon-social:link {
   color: white;
 }
