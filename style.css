@@ -32,7 +32,8 @@ body {
   transition-duration: 0.3s;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: #ff7514;
   color: white;
   border-width: 0;
