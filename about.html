@@ -3,10 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description"
     content="I'm a graphic and web designer freelance living in Rome. I'm keen on illustration, japanese culture and languages.">
   <meta name="keywords" content="Graphic design, Web design, Web development, Digital illustration">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="francescamuia.github.io/about.html">
+  <meta property="og:title" content="Francesca Muià | Graphic and Web Designer">
+  <meta property="og:image" content="francescamuia.github.io/assets/img/IMG_ABOUT.png">
+  <meta property="og:description" content="Francesca Muià Graphic and Web Designer freelance">
+  <meta property="og:locale" content="en_EU">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Francesca Muià | Graphic & Web Designer </title>
   <link rel="icon" href="assets/img/favicon.ico">
@@ -38,6 +45,29 @@
   <script
     src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init('x-fp93xx_ZcyqC4yI');
+    })();
+  </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+        this.contact_number.value = Math.random() * 100000 | 0;
+        // these IDs from the previous steps
+        emailjs.sendForm('service_m6h1966', 'template_4gmc5ja', this)
+          .then(function () {
+            console.log('SUCCESS!');
+          }, function (error) {
+            console.log('FAILED...', error);
+          });
+      });
+    }
+  </script>
 </head>
 
 <body>
@@ -92,7 +122,7 @@
   <figure class="textover">
     <img class="back-display" src="assets/img/HeaderBackground.png" />
     <img class="back-mobile" src="assets/img/HeaderMobile.png" />
-    <figcaption>Graphic & Web Designer</figcaption>
+    <h1 class="figcaption">Graphic & Web Designer</h1>
   </figure>
 
   <div class="intro-section">
@@ -148,37 +178,38 @@
   </div>
 
   <div class="form-section">
-    <form class="form-container" action="mailto:francesca.muia91@gmail.com" method="POST" enctype=”text/plain”
-      name=”EmailForm”>
+    <form id="contact-form" class="form-container" name=”EmailForm”>
 
       <div class="icon-section">
         <div class=social-about>
           <a class="icon-social" href="https://www.instagram.com/effeemme_art/" target=”_blank”><img
-              class="instagram-icon" src="assets/img/InstagramIcon.png" />effeemme_art
+              src="assets/img/InstagramIcon.png" />effeemme_art
           </a>
         </div>
         <div class=social-about>
           <a class="icon-social" href="https://www.linkedin.com/in/francesca-mui%C3%A0-6135ba175/" target=”_blank”><img
-              class="linkedin-icon" src="assets/img/LinkedinLogo.png" />Francesca Muià
+              src="assets/img/LinkedinLogo.png" />Francesca Muià
           </a>
         </div>
         <div class=social-about>
-          <a class="icon-social" href="https://www.behance.net/francescamuia" target=”_blank”><img class="behance-icon"
+          <a class="icon-social" href="https://www.behance.net/francescamuia" target=”_blank”><img
               src="assets/img/BehanceLogo.png" />Francesca Muià
           </a>
         </div>
         <div class=social-about>
           <a class="icon-social" href="https://github.com/FrancescaMuia" target=”_blank”>
-            <img class="github-icon" src="assets/img/GithubLogo.png" />Francesca Muià
+            <img src="assets/img/GithubLogo.png" />Francesca Muià
           </a>
         </div>
       </div>
 
       <div class="form-part">
+        <input type="hidden" name="contact_number">
+        <input type="hidden" name="to_name" value="Francesca">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name"><br>
+        <input type="text" id="name" name="from_name"><br>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email"><br>
+        <input type="email" id="email" name="reply_to"><br>
         <label for="ContactCommentt">Message</label>
         <textarea id="ContactCommentt" name="message" rows="8" cols="30"></textarea><br>
         <input class="submit-btn" type="submit" value="Send">

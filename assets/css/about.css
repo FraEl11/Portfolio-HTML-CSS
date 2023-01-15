@@ -102,10 +102,7 @@
   margin: 2em 0;
 }
 
-.instagram-icon,
-.linkedin-icon,
-.behance-icon,
-.github-icon {
+.icon-social img {
   width: 50px;
   height: auto;
 }
