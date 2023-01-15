@@ -38,6 +38,29 @@
   <script
     src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init('x-fp93xx_ZcyqC4yI');
+    })();
+  </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+        this.contact_number.value = Math.random() * 100000 | 0;
+        // these IDs from the previous steps
+        emailjs.sendForm('service_m6h1966', 'template_4gmc5ja', this)
+          .then(function () {
+            console.log('SUCCESS!');
+          }, function (error) {
+            console.log('FAILED...', error);
+          });
+      });
+    }
+  </script>
 </head>
 
 <body>
@@ -148,8 +171,7 @@
   </div>
 
   <div class="form-section">
-    <form class="form-container" action="mailto:francesca.muia91@gmail.com" method="POST" enctype=”text/plain”
-      name=”EmailForm”>
+    <form id="contact-form" class="form-container" name=”EmailForm”>
 
       <div class="icon-section">
         <div class=social-about>
@@ -175,10 +197,12 @@
       </div>
 
       <div class="form-part">
+        <input type="hidden" name="contact_number">
+        <input type="hidden" name="to_name" value="Francesca">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name"><br>
+        <input type="text" id="name" name="from_name"><br>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email"><br>
+        <input type="email" id="email" name="reply_to"><br>
         <label for="ContactCommentt">Message</label>
         <textarea id="ContactCommentt" name="message" rows="8" cols="30"></textarea><br>
         <input class="submit-btn" type="submit" value="Send">
